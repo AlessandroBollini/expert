@@ -14,7 +14,7 @@ async function main(){
     const signer0 = ethers.provider.getSigner(0);
     await signer0.getTransactionCount();
     const nft = await hre.ethers.getContractAt("Alfa2", contract);
-    await nft.performUpkeep(tokenId,2);
+    await nft.performUpkeep(tokenId,level);
     await controller.updateUser(tokenId,newLevel);
     console.log("nft Updated");
 }
